@@ -15,5 +15,11 @@ client.on('message', msg => {
   }
 });
 
+client.on('guildMemberAdd', member => {
+  return message.reply(
+    'Bienvenido a nuestro server... how\'s pre season going?'
+  )
+})
+
 client.login(process.env.BOT_TOKEN);
 
