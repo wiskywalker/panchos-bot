@@ -16,10 +16,9 @@ client.on('message', msg => {
 });
 
 client.on('guildMemberAdd', member => {
-  return message.reply(
-    'Bienvenido a nuestro server... how\'s pre season going?'
-  )
-})
+  const guild = member.guild;
+  guild.channels.find(channel => channel.name === "general").send('Bienvenido a nuestro server... how\'s pre season going?' + member);
+});
 
 client.login(process.env.BOT_TOKEN);
 
